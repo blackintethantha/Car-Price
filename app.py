@@ -15,12 +15,12 @@ model = pickle.load(open('m-lr.pkl', 'rb'))
 # Get input from the user
 brand = st.selectbox('Car Brand', ['Maruti', 'Hyundai', 'Honda', 'Toyota', 'Ford', 'Others'])
 year = st.number_input('Year of Manufacture', min_value=1990, max_value=2025, value=2015, step=1)
-km_driven = st.number_input('Kilometers Driven', min_value=0, max_value=500000, value=50000)
+km_driven = st.number_input('Kilometers Driven', min_value=0, max_value=500000, value=5000)
 fuel = st.selectbox('Fuel Type', ['Petrol', 'Diesel', 'CNG', 'LPG', 'Electric'])
 owner = st.selectbox('Number of Previous Owners', ['First', 'Second', 'Third', 'Fourth & Above'])
 
 # Feature engineering (convert inputs to match the model’s format)
-car_age = 2025 - year
+age = 2025 - year
 
 # Convert user input to a DataFrame
 user_data = pd.DataFrame({
@@ -28,7 +28,7 @@ user_data = pd.DataFrame({
     'km_driven': [np.log1p(km_driven)],  # Apply log transformation
     'fuel': [fuel],
     'owner': [owner],
-    'car_age': [car_age]
+    'age': [age]
 })
 
 # One-hot encode user input to match training data
