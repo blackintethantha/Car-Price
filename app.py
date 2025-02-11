@@ -9,8 +9,8 @@ st.title('Car Price Prediction App')
 st.write('This app predicts the **selling price of used cars** based on the input features.')
 
 # Load the trained model and feature columns
-columns = pickle.load(open('model_columns.pkl', 'rb'))
-model = pickle.load(open('model_lr.pkl', 'rb'))
+columns = pickle.load(open('m-columns.pkl', 'rb'))
+model = pickle.load(open('m-lr.pkl', 'rb'))
 
 # Get input from the user
 brand = st.selectbox('Car Brand', ['Maruti', 'Hyundai', 'Honda', 'Toyota', 'Ford', 'Others'])
