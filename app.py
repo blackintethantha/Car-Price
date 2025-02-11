@@ -5,8 +5,8 @@ import numpy as np
 import sklearn
 
 # App title
-st.title('Car Price Prediction App')
-st.write('This app predicts the **selling price of used cars** based on the input features.')
+st.title('Predicitng your car prices')
+st.write('This app predicts the **sales price of used or new cars** based on the input features.')
 
 # Load the trained model and feature columns
 columns = pickle.load(open('m-columns.pkl', 'rb'))
