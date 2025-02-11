@@ -35,6 +35,6 @@ user_data = pd.DataFrame({
 })
 # Predict the selling price
 if st.button('Predict Selling Price'):
-    prediction = model.predict(user_data_encoded)
+    prediction = model.predict(user_data)
     predicted_price = np.expm1(prediction[0])  # Reverse log transformation
     st.write(f'### Predicted Selling Price: ₹{predicted_price:,.2f}')
