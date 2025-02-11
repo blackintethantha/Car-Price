@@ -33,9 +33,8 @@ user_data = pd.DataFrame({
     'owner': [owner],
     'car_age': [car_age]
 })
-# Predict Sales
-prediction = model.predict(user_data)[0]
-
-# Show result when "Predict" button is clicked
-if st.button("Predict"):
-    st.success(f"📈 Predicted Sales: {prediction:,.2f} units")
+# Predict the selling price
+if st.button('Predict Selling Price'):
+    prediction = model.predict(user_data_encoded)
+    predicted_price = np.expm1(prediction[0])  # Reverse log transformation
+    st.write(f'### Predicted Selling Price: ₹{predicted_price:,.2f}')
