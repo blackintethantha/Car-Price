@@ -5,7 +5,7 @@ import numpy as np
 import sklearn
 
 # App title
-st.title('Predicitng your car prices')
+st.title('Predicting your car prices')
 st.write('This app predicts the **sales price of used or new cars** based on the input features.')
 
 # Load the trained model and feature columns
